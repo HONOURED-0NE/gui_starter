@@ -29,7 +29,7 @@ def get_info():
     if len(website)==0 or len(password)==0 or len(credentials)==0:
         messagebox.showinfo(title='Failure', message= 'Please dont leave any fields empty!')
     else:    
-        is_ok = messagebox.askokcancel(title=website, message=f'Click ok to confirm your credentials')
+        is_ok = messagebox.askokcancel(title=website, message=f'These are the entered details:\nEmail:{credentials}\nPassword:{password}\nIs it ok to enter?')
         if is_ok:
             with open("./password_manager/data.docx", mode='a') as info:
                 info.write(f"{website} | {credentials} | {password}\n")
